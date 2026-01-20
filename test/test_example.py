@@ -41,6 +41,11 @@ class TestInvParserUI(unittest.TestCase):
 
         self.page.goto(APP_URL)
 
+        try:
+            self.page.get_by_role("button", name="Visit Site").click()
+        except:
+            print("Ngrok warning page was not loaded")
+
         username = self.page.locator('#username')
         password = self.page.locator('#password')
 
