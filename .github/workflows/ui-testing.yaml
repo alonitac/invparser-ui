@@ -57,3 +57,11 @@ jobs:
         APP_URL: https://beeb19a750d5.ngrok-free.app/
       run: |
         pytest test/ -v
+
+    - name: Archive test screenshots
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-screenshots
+        path: |
+          *.png

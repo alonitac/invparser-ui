@@ -49,6 +49,8 @@ class TestInvParserUI(unittest.TestCase):
         username = self.page.locator('#username')
         password = self.page.locator('#password')
 
+        self.page.screenshot(path='before_login.png')
+
         username.fill('admin')
         password.fill('admin')
 
